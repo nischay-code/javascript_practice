@@ -22,6 +22,7 @@
 9. `===` is value and datatype
 
 10. Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+11. DOM - Document Object Model
     
 
 
