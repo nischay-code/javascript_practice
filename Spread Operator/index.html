@@ -26,6 +26,17 @@
       //   merge two array using spread operator
       let f = [...c, ...d];
       console.log(f);
+
+      let o1 = {
+        x: "hey",
+        y: "bye",
+      };
+      console.log(o1);
+      console.log({ ...o1 });
+      //   console.log(...o1); Error : Spread syntax requires ...iterable[Symbol.iterator] to be a function
+
+      let o2 = { ...o1 };
+      console.log(o2);
     </script>
   </body>
 </html>
