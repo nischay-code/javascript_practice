@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+  </head>
+  <body>
+    <script>
+      // <----map---->
+      let a = [1, 2, 3, 4];
+
+      let b = a.map((x) => {
+        // console.log(x);
+        return x + 1;
+      });
+
+      // console.log(b);
+
+      let c = a.forEach((x) => {
+        // console.log(x);
+        return x + 1;
+      });
+
+      let d = a.map((x) => x).reverse();
+
+      let e = a.map((x) => x > 2);
+
+      // <----filter---->
+
+      let f = a.filter((x) => x > 2);
+
+      let g = a.map((x) => x + 2).filter((y) => y > 3);
+      console.log(a, b, c, d, e, f, g);
+    </script>
+  </body>
+</html>
