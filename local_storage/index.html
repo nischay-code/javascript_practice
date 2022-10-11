@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>localStorage</title>
+  </head>
+  <body>
+    <h1>Local Storage</h1>
+    <input id="input" type="text" />
+    <button id="btn1">Enter</button>
+    <button id="btn2">Reset</button>
+    <div id="list"></div>
+    <script>
+      let c = [];
+      console.log(localStorage.length);
+      if (localStorage.length > 0) {
+        document.getElementById("list").innerHTML = JSON.parse(
+          localStorage.getItem("data")
+        );
+      }
+      document.getElementById("btn1").onclick = () => {
+        let a = document.getElementById("input").value;
+        c.push(a);
+        // localStorage.setItem("data", a);
+        localStorage.setItem("data", JSON.stringify(c));
+        // b = (localStorage.getItem("data"));
+        var b = JSON.parse(localStorage.getItem("data"));
+        document.getElementById("list").innerHTML = "";
+
+        b.forEach((x) => {
+          document.getElementById("list").innerHTML += "<p>" + x + "<p>";
+        });
+
+        console.log(b);
+        // console.log(c);
+        // localStorage.setItem("Movies", "d");
+      };
+      document.getElementById("btn2").onclick = () => {
+        // localStorage.removeItem("data");
+        localStorage.clear();
+      };
+    </script>
+  </body>
+</html>
