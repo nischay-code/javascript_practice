@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button id="btn">Fetch</button> -->
+    <!-- <script>
+      document.getElementById("btn").onclick = () => {
+        fetch("api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=84ff9daeb22fd6079dc8573a1d53d244")
+          .then((data) => {
+            return data.json();
+          })
+          .then((data2) => {
+            console.log(data2);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
+    </script> -->
+
+    <script>
+      document.getElementById("btn").onclick = async () => {
+        var data = await fetch(
+          "api.openweathermap.org/data/2.5/weather?q=London,uk&APPID="
+        );
+        var data2 = await data.json();
+      };
+    </script>
+
+    <!-- <script>
+      //async only returns promise
+      async function get() {
+        return 1;
+      }
+    //   get().then((data) => console.log(data));
+
+      async function display() {
+        var x = await get();
+        console.log(x);
+      }
+      display();
+    </script> -->
+  </body>
+</html>

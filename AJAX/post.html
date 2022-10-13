@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <input placeholder="Name" class="name" pattern="[a-z]+" required />
+      <input placeholder="Email" class="email" type="email" />
+      <button type="submit">Submit</button>
+    </form>
+    <button id="mybtn">Post</button>
+    <!-- <script>
+      var data = {
+        name: "nischay",
+        status: "online",
+      };
+
+      document.getElementById("mybtn").onclick = () => {
+        const url = "";
+        fetch(url, {
+          method: "post",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application-json",
+          },
+        })
+          .then((res) => res.json())
+          .then((res2) => {
+            console.log(res2);
+          });
+      };
+    </script> -->
+    <script>
+      var data = {
+        name: "nischay",
+        status: "online",
+      };
+
+      document.getElementById("form").onsubmit = (e) => {
+        e.preventDefault();
+        var data = new URLSearchParams();
+        console.log(e.target);
+        for (const pair of new FormData(e.target)) {
+          // console.log(pair)
+          data.append(pair[0], pair[1]);
+        }
+        const url = "";
+        fetch(url, {
+          method: "post",
+          body: data,
+        })
+          .then((res) => res.json())
+          .then((res2) => {
+            console.log(res2);
+          });
+      };
+    </script>
+  </body>
+</html>
