@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class student {
+        constructor(id, user) {
+          this.roll_no = id;
+          this.name = user;
+        }
+        detail() {
+          console.log(`Roll Number of ${this.name} is ${this.roll_no}`);
+        }
+      }
+      const Ram = new student(101, "Ram");
+      const Krish = new student(101, "Krish");
+
+      Ram.detail();
+
+      class teacher extends student {
+        detail() {
+          console.log(`Teacher`);
+        }
+      }
+
+      const Seeta = new teacher(1000, "Seeta");
+      Seeta.detail();
+    </script>
+  </body>
+</html>
